@@ -6,7 +6,6 @@ output as unigenes in fasta format in STDOUT or to file
 import time
 import argparse
 import sys
-import textwrap
 
 
 class Ref_Seq(object):
@@ -101,8 +100,9 @@ def main():
 
     for key, value in trinity: 
         fout.write(key+"\n")
-        for i in textwrap.wrap(value):
-            fout.write(i+"\n")
+        lines = (value[n:n + 64] for n in range(0, len(value), 64))
+        for i in lines:
+            fout.write(i+"\n"))
 
 
 if __name__ == '__main__':
