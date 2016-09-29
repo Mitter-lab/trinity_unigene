@@ -102,7 +102,7 @@ def main():
         fout.write(key+"\n")
         lines = (value[n:n + 64] for n in range(0, len(value), 64))
         for i in lines:
-            fout.write(i+"\n"))
+            fout.write(i+"\n")
 
 
 if __name__ == '__main__':
